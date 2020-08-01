@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
+import Dashboard from './components/Dashboard';
 import Nav from './components/Nav';
 import './App.css';
 
@@ -26,6 +27,14 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <Switch>
+        <Route exact path="/">
+          <Dashboard entries={entries} />
+        </Route>
+        <Route path="/new">
+          <h2>You're creating a new entry!</h2>
+        </Route>
+      </Switch>
     </div>
   );
 }

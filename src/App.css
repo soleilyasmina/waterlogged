@@ -13,7 +13,7 @@ nav {
 }
 
 nav a {
-  margin: 5px 10px;
+  margin: 5px 20px;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-weight: 200;
@@ -30,4 +30,58 @@ nav a:visited {
 
 .left {
   margin-right: auto;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 20px;
+}
+
+.entries-list {
+  flex: 2;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats {
+  flex: 1;
+  border: 1px solid blue;
+  box-sizing: border-box;
+}
+
+.entry {
+  width: 200px;
+}
+
+.entry .date-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.entry h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  color: blue;
+  margin: 0;
+}
+
+.entry h4 {
+  margin: 4px 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  color: blue;
+}
+
+.entry p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  color: blue;
+  margin: 10px 0;
 }
