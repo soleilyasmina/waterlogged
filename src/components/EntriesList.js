@@ -6,6 +6,7 @@ const EntriesList = (props) => {
   const entries = props.entries;
   return (
     <div className="entries-list">
+      <h1>Logs:</h1>
       {entries.map((entry) => (
         <Entry entry={entry} key={entry.id}/>
       ))}

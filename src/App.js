@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 
+import CreateEntry from './components/CreateEntry';
 import Dashboard from './components/Dashboard';
 import Nav from './components/Nav';
 import './App.css';
@@ -19,7 +20,12 @@ function App() {
           'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
         },
       });
-      updateEntries(response.data.records);
+      const sortedRecords = response.data.records.sort((a, b) => {
+        const firstDate = new Date(a.fields.date).getTime();
+        const secondDate = new Date(b.fields.date).getTime();
+        return secondDate - firstDate;
+      });
+      updateEntries(sortedRecords);
     };
     getAirtableRecords();
   }, [fetchEntries]);
@@ -32,7 +38,7 @@ function App() {
           <Dashboard entries={entries} />
         </Route>
         <Route path="/new">
-          <h2>You're creating a new entry!</h2>
+          <CreateEntry fetchEntries={fetchEntries} invokeFetch={invokeFetch} />
         </Route>
       </Switch>
     </div>
