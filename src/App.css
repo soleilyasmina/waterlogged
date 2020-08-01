@@ -128,7 +128,7 @@ nav a:visited {
   border: 1px solid blue;
 }
 
-.create-entry button {
+.create-entry button, .entry button {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
   color: blue;
@@ -137,6 +137,6 @@ nav a:visited {
   border: 1px solid blue;
 }
 
-.create-entry button:hover {
+.create-entry button:hover, .entry button:hover {
   background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }

@@ -3,12 +3,16 @@ import Entry from './Entry';
 
 const EntriesList = (props) => {
   // the same as const { entries } = props;
-  const entries = props.entries;
+  const { entries, ...refreshers } = props;
   return (
     <div className="entries-list">
       <h1>Logs:</h1>
       {entries.map((entry) => (
-        <Entry entry={entry} key={entry.id}/>
+        <Entry
+          entry={entry}
+          {...refreshers}
+          key={entry.id}
+        />
       ))}
     </div>
   )

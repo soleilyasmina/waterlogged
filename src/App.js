@@ -35,10 +35,17 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/">
-          <Dashboard entries={entries} />
+          <Dashboard
+            entries={entries}
+            fetchEntries={fetchEntries}
+            invokeFetch={invokeFetch}
+          />
         </Route>
         <Route path="/new">
-          <CreateEntry fetchEntries={fetchEntries} invokeFetch={invokeFetch} />
+          <CreateEntry
+            fetchEntries={fetchEntries}
+            invokeFetch={invokeFetch} 
+          />
         </Route>
       </Switch>
     </div>
