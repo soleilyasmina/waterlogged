@@ -39,15 +39,19 @@ nav a:visited {
   margin: 0 20px;
 }
 
-.entries-list {
+.entries {
   flex: 2;
   border: 1px solid blue;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 10px;
+}
+
+.entries-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
   height: fit-content;
 }
 
@@ -60,7 +64,9 @@ nav a:visited {
 }
 
 .entry {
-  width: 200px;
+  width: 190px;
+  margin: 5px;
+  box-sizing: border-box;
 }
 
 .entry .date-container {
@@ -90,7 +96,7 @@ nav a:visited {
   margin: 10px 0;
 }
 
-.entries-list h1, .stats h1 {
+.entries h1, .stats h1 {
   margin: 0;
   text-align: center;
   font-family: 'Poppins', sans-serif;
